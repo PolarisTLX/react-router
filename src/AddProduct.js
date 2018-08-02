@@ -10,13 +10,16 @@ class AddProduct extends Component {
   onSubmit(event) {
     event.preventDefault();
     this.props.onAdd(this.nameInput.value, this.priceInput.value);
+
+    this.nameInput.value = '';
+    this.priceInput.value = '';
   }
 
   render() {
 
     return (
         <form onSubmit={this.onSubmit}>
-          <h3>Add Product></h3>
+          <h3>Add Product</h3>
 
           <input placeholder="Name" ref={nameInput => this.nameInput = nameInput}/>
 
